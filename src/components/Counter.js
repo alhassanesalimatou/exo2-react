@@ -54,7 +54,7 @@ const Counter = () => {
         <h1>Compteur : {formatCompteur(count)}</h1>
         <div className={style.buttonContainer}>
           <button className={`${style.buttonDemarer} ${!isRuning ? style.buttonColorGren : style.ButtonColorRed}`} onClick={() =>{updateIsRuning()}}>{!isRuning ? "Démarer": "Arreté"}</button>
-          <button className={style.buttonReset} onClick={() => {resetCompteur()}}>Réinitialiser</button>
+          {count !== 0 ? <button className={style.buttonReset} onClick={() => {resetCompteur()}}>Réinitialiser</button> : ""}
         </div>
       </div>
     </div>
